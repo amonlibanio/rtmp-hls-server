@@ -24,10 +24,9 @@ jobs:
 
     - name: Build the Docker image
       run: |
-        docker build . --file Dockerfile-alpine --tag amonlibanio/rtmp-server:$(date +%s)
-        docker tag amonlibanio/rtmp-server:$(date +%s) amonlibanio/rtmp-server:latest
+        docker build . --file Dockerfile-alpine --tag rtmp-server:latest
+        docker tag rtmp-server:latest amonlibanio/rtmp-server:latest
 
     - name: Push Docker image to Docker Hub
       run: |
-        docker push amonlibanio/rtmp-server:$(date +%s)
         docker push amonlibanio/rtmp-server:latest
